@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Secure Checkout</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+            integrity="sha384-tKLJeE1ALTUwtXlaGjJYM3sejfssWdAaWR2s97axw4xkiAdMzQjtOjgcyw0Y50KU" crossorigin="anonymous">
+        <link rel="stylesheet" href="form.css" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="container mt-5 bg-white border rounded-3">
+            <div class="row">
+                <div class="col col-auto order-md-1 order-sm-2 col-md-6 container-fluid py-5 justify-content-center"
+                    id="checkoutForm">
+                    <div class="row d-block align-middle fs-2 mb-5">
+                        <i class="bi bi-shield-lock d-inline ps-5"></i>
+                        <h1 class="d-inline"> Secure Checkout </h1>
+                    </div>
+                    <form class="container row needs-validation" action="" id="orderForm" novalidate>
+                        <div class="mb-3">
+                            <label for="contact-information">Contact Information</label>
+                            <input class="form-control" type="email" id="email" name="email" placeholder="Email Address"
+                                required />
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="shipping-address">Shipping Address</label>
+                            <input class="form-control" type="text" id="address" name="address"
+                                placeholder="Street Address" />
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" type="text" id="address" name="address" placeholder="City" />
+                        </div>
+                        <div class="mb-3">
+                            <select name="Please Select" id="" class="form-select text-muted">
+                                <option selected disabled value="">Please Select</option>
+                                <option value="">...</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" type="text" id="state" name="state" placeholder="State" />
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" type="text" id="zip" name="zipcode" placeholder="Zip Code" />
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" type="text" id="phone" name="phone" placeholder="Phone"
+                                 />
+                            <div class="feedback-icon"><i></i></div>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+                            <label class="form-check-label" for="invalidCheck"> Use same address for billing </label>
+                        </div>
+                        <div class="container ms-1 row rounded-3" id="creditInfo">
+                            <div class="row my-3 d-flex justify-content-between p-0">
+                                <div class="col">
+                                    <h2 class="ps-3 text-white text-uppercase">Credit Card</h2>
+                                </div>
+                                <div class="col container d-flex justify-content-end">
+                                    <img class="w-50" src="/images/cc-icon.png" alt="" id="creditCardIcon">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Card Number" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Cardholder's Name" required>
+                            </div>
+                            <div class="container-fluid mb-3">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <select class="form-select text-muted" name="month" id="" placeholder="Month"
+                                            >
+                                            <option selected disabled value="Month">Month</option>
+                                            <option value="January">January</option>
+                                            <option value="February">February</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <select name="year" id="" class="form-select text-muted">
+                                            <option selected disabled value="Year" required>Year</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2028">2028</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container mt-4">
+                            <div class="row">
+                                <button class="btn btn-warning btn-lg border rounded-pill fs-1 ms-1" id="submit"
+                                    name="submit" type="submit"><strong>Buy Now</strong></button>
+                            </div>
+                            <div class="container mt-3">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-end">
+                                        <img class="" src="/images/mcafee.png" alt="" id="mcafeeLogo">
+                                    </div>
+                                    <div class="col">
+                                        <img src="/images/norton_logo.png" alt="" id="nortonLogo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col col-auto order-md-2 order-sm-1 col-md-6 container">
+                    <div class="container row mb-3 d-flex justify-content-center">
+                        <h2 class="my-5 text-center">Order Summary</h2>
+                        <p class="mb-5 text-center">Biofit - 6 Bottles</p>
+                        <img class="w-75" id="supplement" src="/images/liferenew.jpg" alt="">
+                    </div>
+                    <div class="container bg-white my-3">
+                        <div class="row justify-content-center">
+                            <div class="col-3 px-4">
+                                <p class="mb-0">Price:</p>
+                                <p class="mb-0">Shipping:</p>
+                                <p class="mb-0">Taxes:</p>
+                                <p class="mb-0"><strong>Total:</strong></p>
+                                <!--Bold-->
+                            </div>
+                            <div class="col-3 px-4">
+                                <p class="mb-0">$294.00</p>
+                                <p class="mb-0">$0.00</p>
+                                <p class="mb-0">$0.00</p>
+                                <p class="mb-0"><strong>$294.00</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container rounded-3 mb-3" id="moneyBackGuarantee">
+                        <div class="row justify-content-center">
+                            <div class="col d-flex justify-content-end px-0">
+                                <img class="" src="/images/Moneyback-PNG-File.png" id="moneyBackBadge" alt=""></img>
+                            </div>
+                            <div class="col px-0">
+                                <h1 class="mt-2 mb-0 strong">180 DAY</h1>
+                                <p class="mt-n5 strong">Money-Back Guarantee</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p>If you're not satisfied for any reason, we INSIST On giving you a full refund.</p>
+                            <p>We're not happy until you're happy. That's why your investment today is covered with a
+                                full 6 month guarantee!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="index.js"></script>
+    </body>
+
+</html>

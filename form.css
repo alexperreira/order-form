@@ -1,0 +1,52 @@
+body {
+	background-color: #5a3e7c;
+	width: 100%;
+}
+
+#checkoutForm {
+	background-color: hsl(273, 31%, 86%);
+	object-fit: contain;
+}
+
+#creditInfo {
+	background-color: #5a3e7c;
+}
+
+#creditCardIcon {
+	width: 50%;
+	object-fit: contain;
+}
+
+#invalidCheck:checked {
+	background-color: #5a3e7c;
+}
+
+#supplement {
+	object-fit: contain;
+	width: 100%;
+}
+
+#moneyBackGuarantee {
+	background-color: #ddd1e7;
+}
+
+#moneyBackBadge {
+	width: 100px;
+}
+
+input,
+select {
+	border: 1px solid #5a3e7c !important;
+}
+
+#buyNow {
+	box-shadow: 3px 3px 5px;
+}
+
+#mcafeeLogo {
+	width: 60px;
+}
+
+#nortonLogo {
+	width: 60px;
+}
