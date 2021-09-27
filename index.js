@@ -28,39 +28,41 @@ function validateForm() {
 	});
 }
 
-$('#submit').on('click', function () {
-	validateForm();
+function callApi() {
 	var email = $('#email').val(function(i, v) {
-		replacedEmail= v.replace('@', '%40');
-	});
-	console.log(email)
+		newEmail= v.replace('@', '%40');
+	})
 	$.ajax({
 		url:
-			'https://kanaparti.api.stdlib.com/warmwishes@dev/apitest/?email=' + replacedEmail,
+			'https://kanaparti.api.stdlib.com/warmwishes@dev/apitest/',
 		method: 'POST',
-		contentType: 'application/json',
+		data: {email: newEmail},
 		success: function (data) {
+			setCookie('LRID', data.id, 1);
 			console.log('Your number is: ' + data.id);
 			alert('Your number is: ' + data.id + ' and here is your cookie: ' + document.cookie);
-			setCookie('LRID', data.id, 1);
 			console.log(document.cookie);
 		},
-		error: function (data) {
-			console.log(data);
+		error: function (error) {
+			console.log(error);
 		},
 	});
+}
+
+$('#orderForm').validate({
+	errorPlacement: function(error, element) {
+		return true;
+	}
+})
+
+$('#submit').on('click', function () {
+	validateForm();
+	if ($('#orderForm').valid()) {
+		callApi();
+	} else {
+		console.log('Error: The form must be validated first.')
+	}
 });
 
 
-
-
-// async function handleFormSubmit(event) {
-//     event.preventDefault();
-//     console.log(event)
-// }
-
-// fetch('https://kanaparti.api.stdlib.com/warmwishes@dev/apitest/').then((res) => {
-//     console.log('Response, waiting to parse...', res);
-//     return res.json();
-// })
 
