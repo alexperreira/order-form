@@ -49,15 +49,9 @@ function callApi() {
 	});
 }
 
-$('#orderForm').validate({
-	errorPlacement: function(error, element) {
-		return true;
-	}
-})
-
 $('#submit').on('click', function () {
 	validateForm();
-	if ($('#orderForm').valid()) {
+	if ($('#orderForm').hasClass('was-validated')) {
 		callApi();
 	} else {
 		console.log('Error: The form must be validated first.')

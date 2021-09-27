@@ -29,7 +29,7 @@
 
                         </div>
                     </div>
-                    <form class="container row needs-validation" action="" id="orderForm">
+                    <form class="container row needs-validation" action="" id="orderForm" novalidate>
                         <div class="mb-3">
                             <label for="contact-information">Contact Information</label>
                             <input class="form-control" type="email" id="email" name="email" placeholder="Email Address"
@@ -44,12 +44,6 @@
                         </div>
                         <div class="mb-3">
                             <input class="form-control" type="text" id="address" name="address" placeholder="City" />
-                        </div>
-                        <div class="mb-3">
-                            <select name="Please Select" id="" class="form-select text-muted">
-                                <option selected disabled value="">Please Select</option>
-                                <option value="">...</option>
-                            </select>
                         </div>
                         <div class="mb-3">
                             <input class="form-control" type="text" id="state" name="state" placeholder="State" />
@@ -77,45 +71,47 @@
                             </div>
                             <div class="mb-3">
                                 <input type="text" class="form-control" placeholder="Card Number" required>
+                                <div class="invalid-feedback">Please input a credit card number.</div>
+                                <div class="valid-feedback">Looks good!</div>
                             </div>
                             <div class="mb-3">
                                 <input type="text" class="form-control" placeholder="Cardholder's Name" required>
+                                <div class="invalid-feedback">Please input the cardholder's name.</div>
+                                <div class="valid-feedback">Looks good!</div>
                             </div>
                             <div class="container-fluid mb-3">
                                 <div class="row">
                                     <div class="col-4">
-                                        <select class="form-select text-muted" name="month" id="" placeholder="Month"
+                                        <select class="form-select" name="month" id="" placeholder="Month"
                                             required >
-                                            <option selected disabled value="Month">Month</option>
-                                            <option value="January">January</option>
-                                            <option value="February">February</option>
-                                            <option value="March">March</option>
-                                            <option value="April">April</option>
-                                            <option value="May">May</option>
-                                            <option value="June">June</option>
-                                            <option value="July">July</option>
-                                            <option value="August">August</option>
-                                            <option value="September">September</option>
-                                            <option value="October">October</option>
-                                            <option value="November">November</option>
-                                            <option value="December">December</option>
+                                            <option selected disabled value="">Month</option>
+                                            <option value="">January</option>
+                                            <option value="">Feburary</option>
+                                            <option value="">March</option>
+                                            <option value="">April</option>
+                                            <option value=""></option>
                                         </select>
+
+                                        </select>
+                                        <div class="invalid-feedback">Please select a an exp. month.</div>
+                                        <div class="valid-feedback">Looks good!</div>
                                     </div>
                                     <div class="col-4">
-                                        <select name="year" id="" class="form-select text-muted">
-                                            <option selected disabled value="Year" required>Year</option>
-                                            <option value="2021">2021</option>
-                                            <option value="2022">2022</option>
-                                            <option value="2023">2023</option>
-                                            <option value="2024">2024</option>
-                                            <option value="2025">2025</option>
-                                            <option value="2026">2026</option>
-                                            <option value="2027">2027</option>
-                                            <option value="2028">2028</option>
+                                        <select name="year" id="year" class="form-select" required>
+                                            <option selected disabled value="">Year</option>
+                                            <option value="">2021</option>
+                                            <option value="">2022</option>
+                                            <option value="">2023</option>
+                                            <option value="">2024</option>
+                                            <option value="">2025</option>
                                         </select>
+                                        <div class="invalid-feedback">Please selet an exp. year.</div>
+                                        <div class="valid-feedback">Looks good!</div>
                                     </div>
                                     <div class="col-4">
                                         <input type="text" class="form-control" id="cvv" placeholder="CVV" required>
+                                        <div class="invalid-feedback">Please enter the CVV number for your card!</div>
+                                        <div class="valid-feedback">Looks good!</div>
                                     </div>
                                 </div>
                             </div>
